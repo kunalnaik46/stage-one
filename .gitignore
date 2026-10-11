@@ -1,0 +1,26 @@
+
+# Virtual environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Keep an example environment file if needed
+!.env.example
+
+# Generated outputs
+outputs/images/
+outputs/logs/
+outputs/artifacts/
+
+# Input documents
+data/input/*
+!data/input/.gitkeep
+project.pdf

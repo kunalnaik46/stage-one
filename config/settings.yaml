@@ -1,0 +1,43 @@
+pipeline:
+  name: "stage1_pid_document_scanner"
+  version: "1.0.0"
+
+paths:
+  input_pdf_path: "project.pdf"
+  output_dir: "outputs"
+  artifacts_dir: "outputs/artifacts"
+  images_dir: "outputs/images"
+  logs_dir: "outputs/logs"
+
+logging:
+  level: "INFO"
+  log_file: "outputs/logs/pipeline.log"
+  console_output: true
+
+pdf_reader:
+  max_text_preview_chars: 300
+  extract_drawing_counts: true
+  extract_image_counts: true
+
+page_renderer:
+  enabled: true
+  dpi: 150
+  image_format: "png"
+  max_pixels_per_page: 150000000
+  color_space: "rgb"
+
+layout_detection:
+  enabled: true
+  score_threshold: 0.50
+  detect_drawing_area: true
+  detect_outer_margins: true
+
+ocr:
+  enabled: true
+  force_ocr: false
+  min_native_words_threshold: 10
+  min_native_chars_threshold: 50
+  granularity: "word"
+  prefer_native: true
+
+
